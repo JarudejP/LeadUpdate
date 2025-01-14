@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Data Patcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-input {
+            margin: 10px 0;
+        }
+        .form-input label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-input input {
+            width: 300px;
+            padding: 5px;
+        }
+        .form-input button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JSON Data Patcher</h1>
+
+    <!-- URL Input Section -->
+    <div class="form-input">
+        <label for="urlInput">Enter the Base URL:</label>
+        <input type="text" id="urlInput" placeholder="Enter base URL here (e.g., https://example.com/resource)">
+    </div>
+
+    <div class="form-input">
+        <button id="createPaymentLink">Create Payment Link</button>
+        <button id="createContract">Create Contract Link</button>
+    </div>
+
+    <div class="form-input">
+        <label for="updatedUrl">Updated URL:</label>
+        <input type="text" id="updatedUrl" readonly>
+        <button id="copyUrlButton">Copy URL</button>
+        <button id="clearUrlButton">Clear URL</button> <!-- New Clear URL button -->
+    </div>
+    
+
+
+    <hr>
+
+    <!-- Patch Data Section -->
+    <h2>Update Data</h2>
+    <form id="patchForm">
+        <div class="form-input">
+            <label for="compulsoryPolicyStartDate">Compulsory Policy Start Date:</label>
+            <input type="date" id="compulsoryPolicyStartDate">
+        </div>
+        <div class="form-input">
+            <label for="customerDOB">Customer DOB:</label>
+            <input type="date" id="customerDOB">
+        </div>
+        <div class="form-input">
+            <label for="customerFirstName">Customer First Name:</label>
+            <input type="text" id="customerFirstName">
+        </div>
+        <div class="form-input">
+            <label for="customerLastName">Customer Last Name:</label>
+            <input type="text" id="customerLastName">
+        </div>
+        <div class="form-input">
+            <label for="policyHolderDOB">Policy Holder DOB:</label>
+            <input type="date" id="policyHolderDOB">
+        </div>
+        <div class="form-input">
+            <label for="policyHolderFirstName">Policy Holder First Name:</label>
+            <input type="text" id="policyHolderFirstName">
+        </div>
+        <div class="form-input">
+            <label for="policyHolderLastName">Policy Holder Last Name:</label>
+            <input type="text" id="policyHolderLastName">
+        </div>
+        <div class="form-input">
+            <label for="policyHolderNationalId">Policy Holder National ID:</label>
+            <input type="text" id="policyHolderNationalId">
+        </div>
+        <div class="form-input">
+            <label for="policyStartDate">Policy Start Date:</label>
+            <input type="date" id="policyStartDate">
+        </div>
+        <button type="submit">Update Data</button>
+    </form>
+
+    <h2>Updated Data:</h2>
+    <pre id="result"></pre>
+
+    <script src="app.js"></script>
+</body>
+</html>
